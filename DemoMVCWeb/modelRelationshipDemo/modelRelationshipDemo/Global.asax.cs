@@ -1,5 +1,7 @@
-﻿using System;
+﻿using modelRelationshipDemo.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,9 @@ namespace modelRelationshipDemo
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Create and seed database using data context
+            Database.SetInitializer<myDbContext>(new myDbInitializer());
         }
     }
 }
