@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace displayNameDemo.Models
+{
+    public class ListItem
+    {
+        public int ListItemID { get; set; }
+        public string Title { get; set; }
+        public string ListItemEntry { get; set; }
+        public string TimeCreated { get; set; }
+    }
+}
