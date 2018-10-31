@@ -1,4 +1,5 @@
-﻿using System;
+﻿using customValAttrDemo.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace validationDemo.Models
+namespace customValAttrDemo.Models
 {
     public class ItemListDB : DbContext
     {
@@ -21,10 +22,11 @@ namespace validationDemo.Models
         public int ListItemID { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(40)]
         [Display(Name = "Title")]
         public string Title { get; set; }
 
+        [MustHaveMultipleItems(ErrorMessage = "Please enter more than one item and separate them using commas.")]
         [Display(Name = "Things To Do")]
         public string ListItemEntry { get; set; }
 

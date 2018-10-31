@@ -1,4 +1,5 @@
-﻿using System;
+﻿using customValAttrDemo.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,9 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using validationDemo.Models;
 
-namespace validationDemo
+namespace customValAttrDemo
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -19,7 +19,6 @@ namespace validationDemo
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //Seed database with sample data by calling initializer
             Database.SetInitializer<ItemListDB>(new ItemListsInitializer());
         }
     }
